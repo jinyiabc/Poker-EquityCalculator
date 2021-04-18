@@ -1,2 +1,0 @@
-C:\Users\jinyi\Desktop\PokerEquityCalculator\pybind11\python_example1\src\python_omp\x64\Debug\python_omp.exe
-C:\Users\jinyi\Desktop\PokerEquityCalculator\pybind11\python_example1\src\python_omp\x64\Debug\python_omp.pdb
