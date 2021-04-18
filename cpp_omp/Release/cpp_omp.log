@@ -1,0 +1,12 @@
+﻿  module.cpp
+  CardRange.cpp
+  CombinedRange.cpp
+  EquityCalculator.cpp
+  HandEvaluator.cpp
+     Creating library C:\Users\jinyi\source\repos\python_omp\Release\omp.lib and object C:\Users\jinyi\source\repos\python_omp\Release\omp.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\jinyi\source\repos\python_omp\cpp_omp\module.cpp(29): warning C4172: returning address of local variable or temporary: results
+  All 3491 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  cpp_omp.vcxproj -> C:\Users\jinyi\source\repos\python_omp\Release\omp.pyd
