@@ -73,13 +73,31 @@ const double& montecarlo(const std::vector<std::string>& ranges, std::string boa
         std::vector<std::array<uint8_t,2>> temp = omp::CardRange(c).combinations();
         size_t size1 = temp.size();
         for (int j=0; j < size1; j++){
-//            std::cout << " " << temp[j][0] << temp[j][1];
             std::cout << " " << holeCardsToChar(temp[j]);
         }
         std::cout << size1 << std::endl;
     }
-    std::cout << results.equity[0] << " " << results.equity[1] <<" "<< results.equity[2] << std::endl;
-    std::cout << results.equity[3] << " " << results.equity[4] << " " << results.equity[5] << std::endl;
+
+    // Set up card ranges.
+    unsigned mCombinedRangeCount;
+    uint64_t mDeadCards, mBoardCards;
+    std::vector<omp::CardRange> mOriginalHandRanges;
+    std::vector<std::vector<std::array<uint8_t,2>>> mHandRanges; // Ranges after card removal.
+    static const size_t MAX_COMBINED_RANGE_SIZE = 10000;
+
+    mDeadCards = omp::CardRange::getCardMask(dead);
+    mBoardCards = omp::CardRange::getCardMask(board);
+    mOriginalHandRanges = ranges2;
+    mHandRanges = omp::EquityCalculator::removeInvalidCombos(ranges2, mDeadCards | mBoardCards);
+    std::vector<omp::CombinedRange> combinedRanges = omp::CombinedRange::joinRanges(mHandRanges, MAX_COMBINED_RANGE_SIZE);
+    for (unsigned i = 0; i < combinedRanges.size(); ++i) {
+        if (combinedRanges[i].combos().size() == 0)
+            return 0.0;
+    }
+    mCombinedRangeCount = (unsigned)combinedRanges.size();
+
+//    std::cout << results.equity[0] << " " << results.equity[1] <<" "<< results.equity[2] << std::endl;
+//    std::cout << results.equity[3] << " " << results.equity[4] << " " << results.equity[5] << std::endl;
 
     std::array<double, 6> mydoubles{0, 0, 0, 0, 0, 0};
     for(int i = 0; i < ranges.size(); i++) {

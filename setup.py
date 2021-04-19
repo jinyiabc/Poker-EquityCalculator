@@ -21,6 +21,7 @@ ext_modules = [
     Pybind11Extension("mc",
         ["cpp_omp/mc.cpp", "cpp_omp/src/omp/CardRange.cpp", "cpp_omp/src/omp/EquityCalculator.cpp", "cpp_omp/src/omp/HandEvaluator.cpp", "cpp_omp/src/omp/CombinedRange.cpp"],
         # Example: passing in the version to the compiled code
+        include_dirs=['cpp_omp/src'],
         define_macros = [('VERSION_INFO', __version__)],
         ),
 ]

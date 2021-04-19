@@ -117,7 +117,8 @@ public:
     {
         return mOriginalHandRanges;
     }
-
+    static std::vector<std::vector<std::array<uint8_t,2>>> removeInvalidCombos(const std::vector<CardRange>& handRanges,
+                                                               uint64_t reservedCards);
 private:
     typedef XoroShiro128Plus Rng;
 
@@ -170,8 +171,8 @@ private:
                                    uint64_t* boardCards, uint64_t* usedCards);
     static uint64_t calculateUniquePreflopId(const HandWithPlayerIdx* playerHands, unsigned nplayers);
     static Hand getBoardFromBitmask(uint64_t board);
-    static std::vector<std::vector<std::array<uint8_t,2>>> removeInvalidCombos(const std::vector<CardRange>& handRanges,
-                                                               uint64_t reservedCards);
+//    static std::vector<std::vector<std::array<uint8_t,2>>> removeInvalidCombos(const std::vector<CardRange>& handRanges,
+//                                                               uint64_t reservedCards);
     std::pair<uint64_t,uint64_t> reserveBatch(uint64_t batchCount);
     uint64_t getPreflopCombinationCount();
     uint64_t getPostflopCombinationCount();
