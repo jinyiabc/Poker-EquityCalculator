@@ -38,7 +38,7 @@ CardRange::CardRange(const char* text)
 {
 }
 
-// Construct from vctor.
+// Construct from vector.
 CardRange::CardRange(const std::vector<std::array<uint8_t,2>>& combos)
 {
     for (auto& combo : combos)

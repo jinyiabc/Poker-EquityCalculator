@@ -119,6 +119,14 @@ public:
     }
     static std::vector<std::vector<std::array<uint8_t,2>>> removeInvalidCombos(const std::vector<CardRange>& handRanges,
                                                                uint64_t reservedCards);
+
+    // Ad-hoc struct used when sorting hands.
+    struct HandWithPlayerIdx
+    {
+        std::array<uint8_t,2> cards;
+        unsigned playerIdx;
+    };
+
 private:
     typedef XoroShiro128Plus Rng;
 
@@ -142,12 +150,12 @@ private:
         unsigned winsByPlayerMask[1 << MAX_PLAYERS] = {};
     };
 
-    // Ad-hoc struct used when sorting hands.
-    struct HandWithPlayerIdx
-    {
-        std::array<uint8_t,2> cards;
-        unsigned playerIdx;
-    };
+//    // Ad-hoc struct used when sorting hands.
+//    struct HandWithPlayerIdx
+//    {
+//        std::array<uint8_t,2> cards;
+//        unsigned playerIdx;
+//    };
 
     void simulateRegularMonteCarlo();
     void simulateRandomWalkMonteCarlo();
