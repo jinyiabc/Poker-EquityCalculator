@@ -62,9 +62,10 @@ public:
         return mSize;
     }
 
+    std::vector<Combo,AlignedAllocator<Combo>> mCombos;
 private:
 
-    std::vector<Combo,AlignedAllocator<Combo>> mCombos;
+    //std::vector<Combo,AlignedAllocator<Combo>> mCombos;
     std::array<unsigned, MAX_PLAYERS> mPlayers;
     unsigned mPlayerCount;
     size_t mSize;
