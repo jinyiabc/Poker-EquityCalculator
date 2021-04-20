@@ -23,7 +23,7 @@ if __name__ == "__main__":
     dead = "6h"
     _run(ranges, cards_on_table, dead)
 
-    # print(mc.playerCombos(ranges, cards_on_table, dead, 0))
+    print(mc.playerCombos(ranges, cards_on_table, dead, 0))
     # print(mc.playerCombos(ranges, cards_on_table, dead, 1))
     # print(mc.playerCombos(ranges, cards_on_table, dead, 2))
     # print(mc.playerCombos(ranges, cards_on_table, dead, 6))
