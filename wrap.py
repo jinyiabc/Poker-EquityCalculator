@@ -5,6 +5,11 @@ def _run(ranges, cards_on_table, dead):
     equity = mc.montecarlo(ranges, cards_on_table, dead)
     print(equity)
 
+
+def _run1(ranges, cards_on_table, dead, playerID):
+    combos = mc.playerCombos(ranges, cards_on_table, dead, playerID)
+    print(combos)
+
     #  Constructs a range from an expression. Supported syntax:
     #  K4 : all suited and offsuited combos with specified ranks
     #  K4s : suited combos
@@ -21,10 +26,7 @@ if __name__ == "__main__":
     ranges = ["K4o+", "AA", "33"]
     cards_on_table = "4hAd3c4c7c"
     dead = "6h"
-    _run(ranges, cards_on_table, dead)
 
-    print(mc.playerCombos(ranges, cards_on_table, dead, 0))
-    # print(mc.playerCombos(ranges, cards_on_table, dead, 1))
-    # print(mc.playerCombos(ranges, cards_on_table, dead, 2))
-    # print(mc.playerCombos(ranges, cards_on_table, dead, 6))
-    # print(mc.playerCombos(["AK", "QsQd"], "4hAd3c4c7c", "", 1))
+    _run(ranges, cards_on_table, dead)
+    _run1(ranges, cards_on_table, dead, 0)
+    _run1(ranges, cards_on_table, dead, 6)

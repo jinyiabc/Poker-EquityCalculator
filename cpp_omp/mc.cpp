@@ -87,8 +87,6 @@ std::vector<double> montecarlo(const std::vector<std::string>& ranges, std::stri
     for(unsigned i = 0 ; i<mPlayerCount; ++i) {
         mResults.push_back(results.equity[i]);
     }
-    std::cout << results.equity[0] << " " << results.equity[1] <<" "<< results.equity[2] << std::endl;
-    std::cout << results.equity[3] << " " << results.equity[4] << " " << results.equity[5] << std::endl;
 
     return  mResults;
 
